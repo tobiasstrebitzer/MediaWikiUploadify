@@ -1,0 +1,29 @@
+
+
+==What can this extension do?==
+The Uploadify Extension allows users with the "uploadify" right to bulk- upload files from a mediawiki sidebar panel. After successful upload, it returns the MediaWiki Link Tag for the uploaded file, ready to be pasted into the MediaWiki edit article form.
+
+==Usage==
+Click on the "Select Files" Button in the uploadify sidebar panel and select as many files you want to upload. The files will be uploaded simultaneously and the page will not be reloaded, so you can upload files while you edit an article on the fly. After an upload is complete, a textbox returns to the uploadify panel with the MediaWiki Link- Tag. Clicking in the textbox will automatically select the Tag to be easily copypasted into your markup.  
+
+==Download instructions==
+[[https://github.com/tobiasstrebitzer/MediaWikiUploadify/zipball/v0.5.0 Download the extension from here]] and upload the contents into "/extensions/Uploadify".
+
+==Installation==
+To install this extension, add the following to [[Manual:LocalSettings.php|LocalSettings.php]]:
+<source lang="php">
+# Allow users to use Uploadify
+$wgGroupPermissions['user']['uploadify'] = true;
+# Load the extension
+require_once("$IP/extensions/Uploadify/Uploadify.php");
+</source>
+
+===Configuration parameters===
+No configuration parameters needed.
+
+===User rights===
+The "uploadify" user right allows the user to use the uploadify extension. Users also need the right to upload files.
+In detail, the uploadify right displays the sidebar and allows file uploads to be done
+
+===Thank You===
+Credits go to [[http://www.uploadify.com Ronnie Garcia and Travis Nickels]] for creating the fantastic uploadify jquery extension, as well es to [[http://www.jquery.com John Resig (jquery developer)]]
