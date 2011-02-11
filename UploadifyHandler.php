@@ -34,14 +34,14 @@ class UploadifyHandler extends SpecialPage {
 
 				// Check if file exists
 				if(stripos($result, "exists, skipping") !== false) {
-					$wgOut->addHTML("File already exists.");
+					$wgOut->addHTML(wfMsg('file-already-exists'));
 				}else{
 					// Report success
 					$wgOut->addHTML("<input onclick='this.select();' class='uploadify-result' type='text' value='[[File:" . ucfirst($_FILES['Filedata']['name']) . "]]' />");
 				}
 
 			} else {
-				$wgOut->addHTML("Invalid file type.");
+				$wgOut->addHTML(wfMsg('invalid-file-type'));
 			}
 
 		}
